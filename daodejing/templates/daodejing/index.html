@@ -1,0 +1,12 @@
+﻿<h1 align='center'>道德经</h1>
+{% if daodej_list %}
+	<ul>
+	{% for daodej in daodej_list %}
+		<li><a href="{% url 'daodejing:detail' daodej.id %}">{{daodej.zhangming}}</a></li><br/>
+		{{daodej.zhangjie}} {{daodej.jingwen}}<br/><br/>
+
+	{%endfor %}
+	</ul>
+{% else %}
+	<p>没有可用的章节。</p>
+{% endif %}
